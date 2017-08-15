@@ -1,0 +1,8 @@
+{
+  "name": "VisualSKNode",
+  "version": "0.0.1",
+  "dependencies": {
+    "connect": "latest",
+    "serve-static": "latest"
+  }
+}

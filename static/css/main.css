@@ -1,0 +1,111 @@
+body
+{
+  font-family : arial;
+}
+
+input[type=file] > *
+{
+   border-width:0px;
+   border-color:white;
+}
+input[type=text]
+{
+   text-transform: uppercase;
+}
+textarea[type=text]
+{
+   text-transform: uppercase;
+}
+
+.user-info 
+{
+  margin-top: 25px;
+  margin-right:50px;
+  width:150px;
+  text-align:right;
+  /*position:fixed;*/
+}
+
+#user-box
+{
+  font-weight:bold;
+  text-align:center;
+}
+
+#logout-button
+{
+ margin-top:10px;
+ width :140px;
+}
+
+#change-password
+{
+ width :140px;
+}
+
+#option-panel
+{
+  margin-top: 25px;
+}
+
+.errmsg
+{
+  font-weight:bold;
+  color:red;
+}
+.okmsg
+{
+ font-weight:bold;
+ color:green;
+}
+label 
+{
+  font-weight:bold;
+  font-size:20px;
+  margin: 10px;
+}
+
+.coin 
+{
+  width:75px;
+}
+.porcent
+{
+  width:75px;
+}
+
+tr:nth-child(even).alternrows 
+{
+  background :#00FF7F;
+}
+
+tr
+{ 
+ cursor: pointer ;
+}
+thead
+{
+  background: #cccccc;
+  margin 20px;
+  height:45px;
+  font-weight:bold;
+  cursor: pointer hand ; 
+}
+.subview 
+{
+  border-color:black;
+  border-width:1px;
+  border-style:dotted;
+  /*height:130px;*/
+  text-align:left;
+  font-weight:bold;
+  padding-top:10px;
+  padding-left:10px;
+  padding-bottom:10px;
+
+}
+
+.selected-row 
+{
+  background :#0BF9ED;
+}

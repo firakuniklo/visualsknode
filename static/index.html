@@ -1,0 +1,154 @@
+<!doctype html>
+<html>
+  <meta>
+    <title>VisualSKNode Alpha 0.1</title>
+    <style>
+       body
+       {
+         font-family: "Times New Roman", Georgia, Serif; 
+       }
+       .asset 
+       {
+          border-style:solid;
+          border-width:1px;
+          border-color:#cccccc;
+       }
+       #viewport 
+       {
+          border-style:dotted;
+       }
+       .node-tools
+       {
+         border-style:dotted;
+         width:100%;
+       }
+       .tool-side
+       {
+         vertical-align:top;
+       }
+       label
+       {
+         font-weight:bold;
+       }
+       .asset-list
+       {
+         position:fixed;
+         z-index:10;
+         overflow:scroll;
+         top:-90000px;
+       }
+       .workspace 
+       {
+       }
+
+    </style>
+    <script src="js/SKNode.js"></script>
+    <script src="js/SKNodeSaveLoad.js"></script>
+    <script src="js/deps/jquery.js"></script>
+    <script src="js/deps/gifshot.min.js"> </script>
+    <script src="js/UI.js"></script>
+  </meta>
+  <body>
+    <div class="asset-view-controls">
+      <label> Directory: </label> <select id="asset-dirs"></select>
+      <label> Subdirectory: </label> <select id="asset-subdirs"></select>
+      <button id="asset-refresh">Refresh</button>
+      <button id="show-assets">Show </button>
+    </div>
+    <div class="asset-list" id="asset-list"></div>
+    <div class="workspace">
+    <table>
+      <tr>
+        <td><canvas width=800 height=600  id="viewport"> </canvas><br>
+          <div class="draw-options">
+            <label>Nodes:</label><input type="checkbox" id="enable-nodes" checked>
+            <label>Links:</label><input type="checkbox" id="enable-links" checked>
+            <label>Visual states:</label> <input type="checkbox" id="enable-visualStates" checked>
+          </div>
+        </td>
+        <td class="tool-side">
+          <label> Workspace:</label>
+          <div class="node-tools">
+            Directory: <select id="world-directories"></select><br> 
+            World:<select id="world-list"></select><br>
+            <button id="refresh-worlds">Refresh</button><br>
+            <button id="erase-world">X</button>
+            <button id="new-world">+</button>
+            <button id="save-world">Save</button>
+            <button id="reload-world">Reload</button>
+          </div>
+          <label> Node tools </label> 
+          <table class="node-tools">
+            <tr>
+              <td>Add:</td><td> <input type="radio" checked name="nodeTool" id="add"></td>
+              <td>Move/Select: </td><td> <input type="radio"  name="nodeTool" id="move"></td>
+            </tr>
+            <tr>
+              <td>Rotate </td><td> <input type="radio"  name="nodeTool" id="rotate"></td>
+              <td>Remove </td><td> <input type="radio"  name="nodeTool" id="remove"></td>
+            </tr>
+            <tr>
+              <td>Anchor</td><td><input type="checkbox" id="anchor"></td>
+              <td><button id="new-parent">New Parent</button></td>
+            </tr>
+          </table>
+          <label> Attributes:</label>
+          <table class="node-tools">
+            <tr>
+              <td>Fixed length:</td><td><input type="checkbox" id="fixedNorm" style="width:10px;"></td>
+            </tr>
+            <tr>
+              <td>Alias:</td><td><input id="alias" style="width:100px;"><td>
+            </tr>
+          </table>
+          <label>Node states:</label><br>
+          <div class="node-tools">
+            <label>Current:</label><select id="node-state-list"></select><br>
+            <button id="delete-node-state">X</button>
+            <button id="add-node-state"> +</button>
+          </div>
+          <label> Transitions test:</label><br>
+          <div class="node-tools">
+            <label>From:</label> <select id="from-state"></select>
+            <label>To: </label> <select id="to-state"></select><br>
+            <label>Resolution:</label><input id="simulate-speed" style="width:50px;"><br>
+            <button id="simulate-transition">Simulate</button>
+            <button id="stop-simulation">Stop</button>
+          </div>
+          <label> Visual states: </label>
+          <div class="node-tools">
+            <label>Current:</label><select id="visual-state"></select><br>
+            <button id="del-visual-state">-</button>
+            <button id="add-visual-state">+</button><br>
+            <label>Propagate:</label><input  id="propagate-visual-state" type="checkbox"><br>
+            <label>Enable state:</label><input  id="enable-visual-state" type="checkbox"><br>
+            <label>Order:</label><input id="state-order" style="width:50px;"><br>
+            <label>Layers:</label><br><select id="layers"></select><br>
+            <button id="delete-layer">-</button><br>
+            <label>Enable layer:</label><input  id="enable-layer" type="checkbox"><br>
+            <label>Expand:</label><input  id="expand-layer" type="checkbox"><br>
+            <table>
+              <tr>
+                <td><label>Order:&nbsp;&nbsp;&nbsp;</label></td>
+                <td><input id="layer-order" style="width:50px;"></td>
+             </tr>
+             <tr>
+               <td><label>Offset:&nbsp;x</label></td>
+               <td><input id="layer-x-offset" style="width:50px;"></td>
+             </tr>
+             <tr>
+               <td><label>Offset:&nbsp;y</label></td>
+               <td><input id="layer-y-offset" style="width:50px;"></td>
+             </tr>
+             <tr>
+               <td><label>Angle(Degs)</label></td>
+               <td><input id="layer-angle" style="width:50px;"></td>
+             </tr>
+            </table>      
+          </div>
+                </td>
+      </tr>
+    </table>
+    </div>
+  </body>
+</html>

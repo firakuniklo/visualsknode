@@ -1,0 +1,15 @@
+Very basic skeletal animation and visual graph representation library
+written in C. 
+
+The core of the library is located in static/js/SKNode.js
+
+A basic graphical enviroment for designing skeletons and animations
+(documentation pending to be done)
+
+npm install 
+
+node FSServer.js
+
+then go to 
+
+http://localhost:7173
