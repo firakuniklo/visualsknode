@@ -1,5 +1,5 @@
 Very basic skeletal animation and visual graph representation library
-written in C. 
+written in JS. 
 
 The core of the library is located in static/js/SKNode.js
 
